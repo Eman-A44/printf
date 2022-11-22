@@ -1,26 +1,30 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_H
+#define _MAIN_H
 #include <stdarg.h>
-/**
- *   * struct specifiers - Struct specifiers
- *     * @specifier: The conversion specifier
- *       * @f: The function pointer
-*/
-typedef struct specifiers
-{
-char *specifier;
-int (*f)(va_list args);
-} spc_dt;
-int _write(char c);
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 int _printf(const char *format, ...);
-int _print_a_char(va_list args);
-int _print_a_string(va_list args);
-int _print_format(const char *format, va_list args);
-int _print_spec(char format, va_list args);
-int _print_invalid_spec(char prev_format, char format, int count);
-int _print_a_integer(va_list args);
-void _recursion_integer(int a);
-int _print_int_binary(va_list args);
-void _recursion_int_binary(int a);
-int _validate_char(char _type);
-#endif
+int _position(const char *s, int n);
+int _strlen(char *s);
+char *_strcat(char *dest, char *src, int n);
+int _abs(int n);
+int _numlen(int n);
+void *rev_string(char *s);
+/**
+ *  * struct type - Struct data type
+ *   *
+ *    * @op: data type argument
+ *     * @f: The function associated
+*/
+
+typedef struct type
+{
+char *op;
+char *(*f)(va_list);
+} type_t;
+char *print_c(va_list list);
+char *print_s(va_list list);
+char *print_i(va_list list);
+char *print_bin(va_list list);
+#endif /*ifend MAIN_H*/
