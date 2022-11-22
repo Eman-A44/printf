@@ -17,7 +17,6 @@ void *rev_string(char *s);
  *    * @op: data type argument
  *     * @f: The function associated
 */
-
 typedef struct type
 {
 char *op;
