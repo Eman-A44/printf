@@ -22,8 +22,4 @@ typedef struct type
 char *op;
 char *(*f)(va_list);
 } type_t;
-char *print_c(va_list list);
-char *print_s(va_list list);
-char *print_i(va_list list);
-char *print_bin(va_list list);
 #endif /*ifend MAIN_H*/
